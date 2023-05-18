@@ -5,6 +5,7 @@ public class Main {
         DealerShipFileManager Dfm = new DealerShipFileManager();
         DealerShip d = Dfm.getDealership();
         d.getAllVehicles();
-        System.out.println(UserInterface.display);
+        UserInterface ui = new UserInterface();
+        ui.display();
     }
 }

@@ -1,4 +1,3 @@
-
 package org.example;
 
 import java.util.Scanner;
@@ -8,22 +7,20 @@ public class UserInterface {
     private Scanner scanner;
 
     private void init() {
-        dealership = new DealerShip();
-        System.out.println("Dealership initialized");
-        scanner = new Scanner(System.in);
-        // DealerShipFileManager DFM = new DealerShipFileManager();
-        //DealerShip dealership = DFM.getDealership();
+        DealerShipFileManager fileManager = new DealerShipFileManager();
+        this.dealership = fileManager.getDealership();
     }
 
-    public static void display() { // creating a method called showReports() to display the reprots menu
+    public void display() {
+        init();
         Scanner scanner = new Scanner(System.in);
-        String input;
+        int input;
         do {
-            System.out.println("Welcome to your Reports ledger ");
-            System.out.println(("Reports Menu: "));
+
+            System.out.println("Welcome to the Cars Dealership");
             System.out.println("[1] - Search By Price");
             System.out.println("[2] - Search By Make/Model");
-            System.out.println("[3] - Search Bu Year");
+            System.out.println("[3] - Search By Year");
             System.out.println("[4] - Search By Color");
             System.out.println("[5] - Search By Mileage");
             System.out.println("[6] - Search By Type");
@@ -31,93 +28,90 @@ public class UserInterface {
             System.out.println("[8] - Add Vehicle");
             System.out.println("[9] - Remove Vehicle");
             System.out.println("[x] - Exit");
-            switch (scanner) {
-
-
-                case "1":
+            input = Integer.parseInt(scanner.nextLine());
+            switch (input) {
+                case 1:
                     processGetByPriceRequests();
-                case "2":
+                    break;
+                case 2:
                     processGetByMakeModelRequest();
-                case "3":
+                    break;
+                case 3:
                     processGetByYearRequests();
-                case "4":
+                    break;
+                case 4:
                     processGetByColorRequest();
-                case "5":
+                    break;
+                case 5:
                     processGetMileageRequest();
-                case "6":
+                    break;
+                case 6:
                     processGetByVehicleTypeRequest();
-                case "7":
+                    break;
+                case 7:
                     processGetAllVehiclesRequest();
-                case "8":
+                    break;
+                case 8:
                     processAddVehicleRequest();
-                case "9":
+                    break;
+                case 9:
                     processRemoveVehicleRequest();
                     break;
+                case 0:
+                    System.out.println("Have a nice Day");
+                    System.exit(0);
+
                 default:
-                    throw new IllegalStateException("Unexpected value: " + scanner);
+                    System.out.println("Please Enter a Valid Option");
             }
-
-            return;
-        }
+        } while (input != 0);
     }
 
-
-
-    private static void processRemoveVehicleRequest() {
-
-    }
-
-    private static void processAddVehicleRequest() {
-
-    }
-
-    private static void processGetAllVehiclesRequest() {
+    private void processGetByMakeModelRequest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the Make of the car");
+        String make= scanner.nextLine();
+        System.out.println("Please Enter the model of the vehicle");
+        String model = scanner.nextLine();
+        this.dealership.getVehiclesByMakeModel(make,model);
 
     }
 
-    private static void processGetByVehicleTypeRequest() {
+    private void processGetByPriceRequests() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the minimum price");
+        int min = scanner.nextInt();
+        System.out.println("Please Enter your maximum price");
+        int max = scanner.nextInt();
+        this.dealership.getVehiclesByPrice(min, max);
 
     }
 
-    private static void processGetMileageRequest() {
-
+    private void processRemoveVehicleRequest() {
+        // Implementation for removing a vehicle
     }
 
-    private static void processGetByColorRequest() {
-
+    private void processAddVehicleRequest() {
+        // Implementation for adding a vehicle
     }
 
-    private static void processGetByYearRequests() {
-
+    private void processGetAllVehiclesRequest() {
+        // Implementation for retrieving all vehicles
     }
 
-    private static void processGetByMakeModelRequest() {
-
+    private void processGetByVehicleTypeRequest() {
+        // Implementation for searching vehicles by type
     }
 
-}
-
-    private static void processGetByPriceRequests() {
-
+    private void processGetMileageRequest() {
+        // Implementation for searching vehicles by mileage
     }
-}
-//    case "A":
-//    processGetByPriceRequests();
-//               case "B":
-//    processGetByMakeModelRequest();
-//               case "C":
-//    processGetByYearRequests();
-//               case "D":
-//    processGetByColorRequest();
-//               case "E":
-//    processGetMileageRequest();
-//               case "F":
-//    processGetByVehicleTypeRequest();
-//               case "G":
-//    processGetAllVehiclesRequest();
-//               case "H":
-//    processAddVehicleRequest();
-//               case "I":
-//    processRemoveVehicleRequest();
-//
-//
+
+    private void processGetByColorRequest() {
+        // Implementation for searching vehicles by color
+    }
+
+    private void processGetByYearRequests() {
+        // Implementation for searching vehicles by year
+    }
+    }
