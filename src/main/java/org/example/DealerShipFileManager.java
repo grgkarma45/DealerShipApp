@@ -1,8 +1,8 @@
 package org.example;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class DealerShipFileManager {
@@ -26,7 +26,7 @@ public class DealerShipFileManager {
                 int year =Integer.parseInt( details[1]);
                 String make = details[2];
                 String model = details[3];
-                String vehicleType = details[4];
+                 String vehicleType = details[4];
                 String color = details[5];
                 int odometer = Integer.parseInt(details[6]);
                 double price =Double.parseDouble(details[7]);
@@ -45,7 +45,27 @@ public class DealerShipFileManager {
         return dealerShip;
     }
 
-    public void saveDealership(){
+        public static void saveDealership(DealerShip dealerShip){
+            try (FileWriter fileWriter = new FileWriter("inventory.csv")) {
+                for (Vehicle v : dealerShip.getAllVehicles()) {
+                    String vehicle = String.format("%d|%d|%s|%s|%s|%s|%d|%.2f\n",
+                            v.getVin(),
+                            v.getYear(),
+                            v.getMake(),
+                            v.getModel(),
+                            v.getVehicleType(),
+                            v.getColor(),
+                            v.getOdometer(),
+                            v.getPrice());
+                    fileWriter.write(vehicle);
+                }
+                fileWriter.close();
+
+                System.out.println("Changes have been saved to file: " );
+            } catch (IOException e) {
+                System.err.println("Error saving dealership inventory");
+            }
+
+        }
 
     }
-}

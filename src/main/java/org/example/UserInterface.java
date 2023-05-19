@@ -1,4 +1,7 @@
 package org.example;
+import org.example.DealerShip;
+import org.example.Vehicle;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,12 +87,13 @@ public class UserInterface {
     private void processGetByMakeModelRequest() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please Enter the Make of the car");
-        String make= scanner.nextLine();
+        String make = scanner.nextLine();
         System.out.println("Please Enter the model of the vehicle");
         String model = scanner.nextLine();
-        this.dealership.getVehiclesByMakeModel(make,model);
+        this.dealership.getVehiclesByMakeModel(make, model);
 
     }
+
     //Case 3
     private void processGetByYearRequests() {
         Scanner scanner = new Scanner(System.in);
@@ -129,7 +133,7 @@ public class UserInterface {
     //Case 6
     private void processGetByVehicleTypeRequest() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Enter the minimum price");
+        System.out.println("Please Enter the type of vehicle");
         String type = scanner.nextLine();
         this.dealership.getVehiclesByType(type);
 
@@ -137,44 +141,86 @@ public class UserInterface {
     }
 
     //Case7
+
+
     public void processGetAllVehiclesRequest() {
-        List<Vehicle> list = dealership.getAllVehicles();
-        displayVehicles(list);
-        // Implementation for retrieving all vehicles
+        List<Vehicle> vehicles = dealership.getAllVehicles();
+        displayVehicles(vehicles);
     }
 
+    // Implementation for retrieving all vehicle
+
     //Case 8
+
     private void processAddVehicleRequest() {
-        // Implementation for adding a vehicle
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the vin of the vehicle: ");
+        int vin = scanner.nextInt();
+        System.out.println("Please enter the year of the vehicle: ");
+        int year = scanner.nextInt();
+        System.out.println("Please enter the make of the vehicle: ");
+        String make = scanner.next();
+        System.out.println("Please enter the model of the vehicle: ");
+        String model = scanner.next();
+        System.out.println("Please enter the type of the vehicle: ");
+        String vehicleType = scanner.next();
+        System.out.println("Please enter the color of the vehicle: ");
+        String color = scanner.next();
+        System.out.println("Please enter the odometer of the vehicle: ");
+        int odometer = scanner.nextInt();
+        System.out.println("Please enter the price of the vehicle: ");
+        double price = scanner.nextDouble();
+        System.out.println(" \n Vehicle added successfully. Thank You!");
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
+        dealership.addVehicle(vehicle);
+
+        DealerShipFileManager DFM = new DealerShipFileManager();
+        DFM.saveDealership(dealership);
+
+
     }
+    // Implementation for adding a vehicle
 
     //Case 9
     private void processRemoveVehicleRequest() {
-
-        // Implementation for removing a vehicle
-    }
-    private void displayVehicles(List<Vehicle> vehicles) {
-        if (vehicles.isEmpty()) {
-            System.out.println("No vehicles found.");
-        } else {
-            System.out.println("List of Vehicles:");
-            for (Vehicle v : vehicles) {
-                System.out.println(v.getVin() + " " + v.getYear() + " " + v.getMake() + " "
-                        + v.getModel() + " " + v.getVehicleType() + " " + v.getColor() + " " +
-                        v.getOdometer() + " " + v.getPrice());
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter the vin of the vehicle that you would like to remove: ");
+        int vin = scanner.nextInt();
+        Vehicle vehicleEntered = null;
+        for (Vehicle v : dealership.getAllVehicles())
+            if (v.getVin() == vin) {
+                vehicleEntered = v;
+                break;
             }
+        if (vehicleEntered != null) {
+            dealership.removeVehicle(vehicleEntered);
+            System.out.println("Vehicle removed successfully. Thank You!");
+            DealerShipFileManager DFM = new DealerShipFileManager();
+            DFM.saveDealership(dealership);
+        } else {
+            System.out.println("No match");
         }
     }
 
 
+    //Implementation for removing a vehicle
 
-
-
-
-
-
-
-
-
-
+    private void displayVehicles(List<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+        } else {
+            System.out.println("List of Vehicles available:");
+            for (Vehicle v : vehicles) {
+                System.out.printf("%-20d %-7d %-15s %-15s %-10s %-10s %-20d %-20.2f \n",
+                        v.getVin(),
+                        v.getYear(),
+                        v.getMake(),
+                        v.getModel(),
+                        v.getVehicleType(),
+                        v.getColor(),
+                        v.getOdometer(),
+                        v.getPrice());
+            }
+        }
     }
+}
