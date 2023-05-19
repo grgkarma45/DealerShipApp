@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -67,16 +69,7 @@ public class UserInterface {
         } while (input != 0);
     }
 
-    private void processGetByMakeModelRequest() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Enter the Make of the car");
-        String make= scanner.nextLine();
-        System.out.println("Please Enter the model of the vehicle");
-        String model = scanner.nextLine();
-        this.dealership.getVehiclesByMakeModel(make,model);
-
-    }
-
+    //Case 1
     private void processGetByPriceRequests() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please Enter the minimum price");
@@ -87,31 +80,101 @@ public class UserInterface {
 
     }
 
-    private void processRemoveVehicleRequest() {
-        // Implementation for removing a vehicle
+    //Case 2
+    private void processGetByMakeModelRequest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the Make of the car");
+        String make= scanner.nextLine();
+        System.out.println("Please Enter the model of the vehicle");
+        String model = scanner.nextLine();
+        this.dealership.getVehiclesByMakeModel(make,model);
+
+    }
+    //Case 3
+    private void processGetByYearRequests() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the minimum year of the vehicle");
+        int min = scanner.nextInt();
+        System.out.println("Please Enter the maximum year of the vehicle");
+        int max = scanner.nextInt();
+        this.dealership.getVehiclesByYear(min, max);
+
+        // Implementation for searching vehicles by year
     }
 
+    //Case 4
+    private void processGetByColorRequest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please select the color of the vehicle");
+        String color = scanner.nextLine();
+        //System.out.println("Please Enter your maximum price");
+        //int max = scanner.nextInt();
+        this.dealership.getVehiclesByColor(color);
+
+        // Implementation for searching vehicles by color
+    }
+
+    //Case 5
+    private void processGetMileageRequest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the minimum mileage of the vehicle");
+        int min = scanner.nextInt();
+        System.out.println("Please Enter your maximum mileage of the vehicle");
+        int max = scanner.nextInt();
+        this.dealership.getVehiclesByMileage(min, max);
+
+        // Implementation for searching vehicles by mileage
+    }
+
+    //Case 6
+    private void processGetByVehicleTypeRequest() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please Enter the minimum price");
+        String type = scanner.nextLine();
+        this.dealership.getVehiclesByType(type);
+
+        // Implementation for searching vehicles by type
+    }
+
+    //Case7
+    public void processGetAllVehiclesRequest() {
+        List<Vehicle> list = dealership.getAllVehicles();
+        displayVehicles(list);
+        // Implementation for retrieving all vehicles
+    }
+
+    //Case 8
     private void processAddVehicleRequest() {
         // Implementation for adding a vehicle
     }
 
-    private void processGetAllVehiclesRequest() {
-        // Implementation for retrieving all vehicles
+    //Case 9
+    private void processRemoveVehicleRequest() {
+
+        // Implementation for removing a vehicle
+    }
+    private void displayVehicles(List<Vehicle> vehicles) {
+        if (vehicles.isEmpty()) {
+            System.out.println("No vehicles found.");
+        } else {
+            System.out.println("List of Vehicles:");
+            for (Vehicle v : vehicles) {
+                System.out.println(v.getVin() + " " + v.getYear() + " " + v.getMake() + " "
+                        + v.getModel() + " " + v.getVehicleType() + " " + v.getColor() + " " +
+                        v.getOdometer() + " " + v.getPrice());
+            }
+        }
     }
 
-    private void processGetByVehicleTypeRequest() {
-        // Implementation for searching vehicles by type
-    }
 
-    private void processGetMileageRequest() {
-        // Implementation for searching vehicles by mileage
-    }
 
-    private void processGetByColorRequest() {
-        // Implementation for searching vehicles by color
-    }
 
-    private void processGetByYearRequests() {
-        // Implementation for searching vehicles by year
-    }
+
+
+
+
+
+
+
+
     }

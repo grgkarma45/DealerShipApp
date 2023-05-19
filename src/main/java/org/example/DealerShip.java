@@ -101,14 +101,19 @@ public class DealerShip {
         }
 
     }
-    public void getVehiclesByType(String type){
-
-    }
-    public void getAllVehicles(){
-        for (Vehicle v : inventory){
-            displayVehicles(v);
-
+    public void getVehiclesByType(String type) {
+        System.out.println("Here are the vehicles with selected type: \n");
+        boolean found = false;
+        for (Vehicle v : inventory) {
+            if (v.getVehicleType().equalsIgnoreCase(type)) {
+                found = true;
+                displayVehicles(v);
+            }
         }
+    }
+    public List<Vehicle> getAllVehicles(){
+        return new ArrayList<>(inventory);
+
     }
     public void addVehicle(Vehicle vehicle){
         inventory.add(vehicle);
