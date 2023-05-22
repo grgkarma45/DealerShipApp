@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="Phase 2 of CarDealerShip">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ContractDataManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" afterDir="false" />
+    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="3pm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684520938251</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="3pm">
+      <created>1684782077339</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684782077339</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -117,7 +122,8 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Friday- Before lunch" />
     <MESSAGE value="Phase 2 of CarDealerShip" />
-    <option name="LAST_COMMIT_MESSAGE" value="Phase 2 of CarDealerShip" />
+    <MESSAGE value="3pm" />
+    <option name="LAST_COMMIT_MESSAGE" value="3pm" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
