@@ -1,4 +1,4 @@
-package org.example;
+package example;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -48,7 +48,7 @@ public class DealerShipFileManager {
         public static void saveDealership(DealerShip dealerShip){
             try (FileWriter fileWriter = new FileWriter("inventory.csv")) {
                 for (Vehicle v : dealerShip.getAllVehicles()) {
-                    String vehicle = String.format("%d|%d|%s|%s|%s|%s|%d|%.2f\n",
+                    String vehicle = String.format("%s|%d|%s|%s|%s|%s|%d|%.2f\n",
                             v.getVin(),
                             v.getYear(),
                             v.getMake(),

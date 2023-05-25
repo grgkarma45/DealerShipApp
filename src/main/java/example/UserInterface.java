@@ -1,10 +1,6 @@
-package org.example;
-import org.example.DealerShip;
-import org.example.Vehicle;
-
+package example;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -145,11 +141,9 @@ public class UserInterface {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please Enter the type of vehicle");
         String type = scanner.nextLine();
-        this.dealership.getVehiclesByType(type);
-
-        // Implementation for searching vehicles by type
+        List<Vehicle> vehicles = this.dealership.getVehiclesByType(type);
+        displayVehicles(vehicles);
     }
-
     //Case7
 
 

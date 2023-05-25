@@ -1,4 +1,4 @@
-package org.example;
+package example;
 
 public abstract class Contract {
     private String date;

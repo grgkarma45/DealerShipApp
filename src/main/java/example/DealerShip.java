@@ -1,4 +1,4 @@
-package org.example;
+package example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,15 +81,24 @@ public class DealerShip {
         return values;
     }
 
-    public List<Vehicle> getVehiclesByType(String vehicleType) {
-        List<Vehicle> values = new ArrayList<Vehicle>();
-        for (Vehicle v : inventory) {
-            if (v.getColor().equalsIgnoreCase(vehicleType)) {
-                values.add(v);
-            }
+//    public List<Vehicle> getVehiclesByType(String vehicleType) {
+//        List<Vehicle> values = new ArrayList<Vehicle>();
+//        for (Vehicle v : inventory) {
+//            if (v.getColor().equalsIgnoreCase(vehicleType)) {
+//                values.add(v);
+//            }
+//        }
+//        return values;
+//    }
+public List<Vehicle> getVehiclesByType(String type) {
+    List<Vehicle> vehiclesByType = new ArrayList<>();
+    for (Vehicle vehicle : inventory) {
+        if (vehicle.getVehicleType().equalsIgnoreCase(type)) {
+            vehiclesByType.add(vehicle);
         }
-        return values;
     }
+    return vehiclesByType;
+}
 
     public Vehicle getVehicleByVin(String vin) {
         for (Vehicle v : inventory) {

@@ -1,4 +1,4 @@
-package org.example;
+package example;
 
 public class LeaseContract extends Contract {
     private Vehicle vehicleSold;
