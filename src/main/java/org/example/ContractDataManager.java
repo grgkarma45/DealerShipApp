@@ -2,7 +2,7 @@ package org.example;
 
 public class ContractDataManager {
     String filename;
-    public ContractDataManager(String filename) {
+    public ContractDataManager() {
         this.filename = filename;
 
     }

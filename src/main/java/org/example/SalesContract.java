@@ -1,53 +1,78 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class SalesContract extends Contract {
-    public SalesContract(String date, String customerName, String customerEmail, Vehicle vehicle) {
-        super(date, customerName, customerEmail, vehicle);
+    private double salesTax;
+    private double processingFee;
+    private double recordingFee;
+    private boolean financed;
+
+    public double getSalesTax() {
+        return salesTax;
+    }
+
+    public double getProcessingFee() {
+        return processingFee;
+    }
+
+    public double getRecordingFee() {
+        return recordingFee;
+    }
+
+    public boolean isFinanced() {
+        return financed;
+    }
+
+    public SalesContract(String dateOfContract, String customerName, String customerEmail, Vehicle vehicleSold) {
+        super(dateOfContract, customerName, customerEmail, vehicleSold);
     }
 
     @Override
     public double getTotalPrice() {
-        double vehiclePrice = 0;
-        double totalPrice = 0;
-        Vehicle vehicleSold = getVehicle(); // Assuming the vehicleSold is the one passed to the constructor
+        double vehiclePrice;
+        double totalPrice;
+        Vehicle vehicleSold = getVehicle();
         vehiclePrice = vehicleSold.getPrice();
-
-        // Processing fee
         if (vehiclePrice < 10000) {
-            totalPrice = vehiclePrice + 295;
+            totalPrice = vehiclePrice + 295; // processing fee for vehicles under 10,000
         } else {
-            totalPrice = vehiclePrice + 495;
+            totalPrice = vehiclePrice + 495; // processing fee for vehicles over 10,000
         }
-
-        totalPrice = totalPrice + 100;
-        totalPrice = totalPrice + (vehiclePrice * 0.05);
+        totalPrice = totalPrice + 100; // Adding Recording fee of 100
+        totalPrice = totalPrice + (vehiclePrice * 0.05); // 5% sales tax amount
         return totalPrice;
     }
 
     @Override
     public double getMonthlyPayment() {
-        Vehicle vehicleSold = getVehicle(); // Assuming the vehicleSold is the one passed to the constructor
+        Vehicle vehicleSold = getVehicle();
         double vehiclePrice = vehicleSold.getPrice();
         double p = vehiclePrice;
         double r;
         double n;
         double t;
-
-        if (vehiclePrice >= 10000) {
-            r = 0.0425;
-            t = 4;
-            n = 12;
+        double payment;
+        if (financed) {
+            if (vehiclePrice >= 10000) {
+                r = 0.0425;
+                t = 4;
+                n = 12;
+            } else {
+                r = 0.0525;
+                t = 2;
+                n = 12;
+            }
+            double rOverN = r / n;
+            double numerator = p * rOverN;
+            double onePlusOverN = 1 + rOverN;
+            double power = -t * n;
+            double denominator = 1 - Math.pow(onePlusOverN, power);
+            payment = numerator / denominator;
+            return payment;
         } else {
-            r = 0.0525;
-            t = 2;
-            n = 12;
+            return 0;
         }
-
-        double rOverN = r / n;
-        double numerator = p * rOverN;
-        double onePlusROverN = 1 + rOverN;
-        double denominator = Math.pow(onePlusROverN, -t * n);
-        return numerator / (1 - denominator);
     }
 
     @Override

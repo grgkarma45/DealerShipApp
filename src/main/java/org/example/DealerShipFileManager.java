@@ -22,7 +22,7 @@ public class DealerShipFileManager {
 
             while ((input = bufferedReader.readLine())!= null){
                 details = input.split("\\|");
-                int vin =Integer.parseInt( details[0]);
+                String vin = details[0];
                 int year =Integer.parseInt( details[1]);
                 String make = details[2];
                 String model = details[3];

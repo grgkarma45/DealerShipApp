@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="3pm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ContractDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ContractDataManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DealerShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DealerShip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DealerShipFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DealerShipFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +29,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -58,7 +63,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/LearnToCode_Capstones/AccountingLedger",
+    "last_opened_file_path": "C:/LearnToCode/Workbook4/DealerShipApp",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -114,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684782077339</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3pm">
+      <created>1684783695908</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684783695908</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

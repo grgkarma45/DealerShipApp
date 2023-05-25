@@ -1,13 +1,14 @@
 package org.example;
 
 public class LeaseContract extends Contract {
-    public LeaseContract(String date, String customerName, String customerEmail, Vehicle vehicle) {
+    public LeaseContract(String date, String customerName, String customerEmail, Vehicle vehicleSold) {
         super(date, customerName, customerEmail, vehicle);
     }
 
     @Override
     public double getTotalPrice() {
-        return 0;
+        double vehiclePrice = vehicleSold.getPrice();
+        return vehiclePrice;
     }
 
     @Override
