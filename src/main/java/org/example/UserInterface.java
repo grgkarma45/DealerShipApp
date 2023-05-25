@@ -233,8 +233,7 @@ public class UserInterface {
                 String financeOrNot = scanner.nextLine().toLowerCase();
                 boolean finance = financeOrNot.equals("y");
 
-                SalesContract salesContract = new SalesContract(
-                        date.toString(), customerName, customerEmail, vehicle
+                SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicle
                 );
                 double monthlyPayment = salesContract.getMonthlyPayment();
                 if (finance) {
