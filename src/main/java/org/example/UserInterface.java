@@ -211,10 +211,12 @@ public class UserInterface {
             System.out.println("No match");
         }
     }
+
     //Implementation for removing a vehicle
     public void setFinanced(boolean financed) {
         this.financed = financed;
     }
+
     public void buyOrLeaseAVehicle() {
         LocalDate date = LocalDate.now();
         Scanner scanner = new Scanner(System.in);
@@ -272,16 +274,15 @@ public class UserInterface {
     }
 
 
-
-
-
     private void displayVehicles(List<Vehicle> vehicles) {
         if (vehicles.isEmpty()) {
             System.out.println("No vehicles found.");
         } else {
             System.out.println("List of Vehicles available:");
+            System.out.println("VIN              YEAR        MAKE             MODEL            TYPE             COLOR       ODOMETER         PRICE");
             for (Vehicle v : vehicles) {
-                System.out.printf("%-20d %-7d %-15s %-15s %-10s %-10s %-20d %-20.2f \n",
+
+                System.out.printf("%-15s  %-10d  %-15s  %-15s  %-15s  %-10s  %-15d  %.2f%n",
                         v.getVin(),
                         v.getYear(),
                         v.getMake(),
@@ -290,7 +291,9 @@ public class UserInterface {
                         v.getColor(),
                         v.getOdometer(),
                         v.getPrice());
+
             }
         }
     }
 }
+

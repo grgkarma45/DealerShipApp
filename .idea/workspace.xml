@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="Project Completed">
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +58,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/LearnToCode/Workbook4/DealerShipApp",
+    "last_opened_file_path": "C:/LearnToCode_Capstones/AccountingLedger",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684991737816</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Project Completed">
+      <created>1684995035703</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684995035703</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
