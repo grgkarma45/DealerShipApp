@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="Project Completed">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
-    </list>
+    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="Readme file added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684995035703</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Readme file added">
+      <created>1684996996642</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684996996642</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -160,7 +163,8 @@
     <MESSAGE value="3pm" />
     <MESSAGE value="Project" />
     <MESSAGE value="Project Completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project Completed" />
+    <MESSAGE value="Readme file added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme file added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
