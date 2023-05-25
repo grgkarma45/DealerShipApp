@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="3pm">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ContractDataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ContractDataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DealerShip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DealerShip.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/DealerShipFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/DealerShipFileManager.java" afterDir="false" />
+    <list default="true" id="720644c6-069e-455c-b817-d246ab98a90a" name="Changes" comment="Project">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LeaseContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SalesContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UserInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Vehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684783695908</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Project">
+      <created>1684986893938</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684986893938</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -135,7 +135,8 @@
     <MESSAGE value="Friday- Before lunch" />
     <MESSAGE value="Phase 2 of CarDealerShip" />
     <MESSAGE value="3pm" />
-    <option name="LAST_COMMIT_MESSAGE" value="3pm" />
+    <MESSAGE value="Project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

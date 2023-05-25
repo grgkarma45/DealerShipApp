@@ -1,8 +1,11 @@
 package org.example;
 
 public class LeaseContract extends Contract {
+    private Vehicle vehicleSold;
+
     public LeaseContract(String date, String customerName, String customerEmail, Vehicle vehicleSold) {
-        super(date, customerName, customerEmail, vehicle);
+        super(date, customerName, customerEmail, vehicleSold);
+        this.vehicleSold = vehicleSold;
     }
 
     @Override
@@ -13,7 +16,6 @@ public class LeaseContract extends Contract {
 
     @Override
     public double getMonthlyPayment() {
-        Vehicle vehicleSold = getVehicle(); // Assuming the vehicleSold is the one passed to the constructor
         double vehiclePrice = vehicleSold.getPrice();
         double p = vehiclePrice;
         double r;
@@ -39,6 +41,6 @@ public class LeaseContract extends Contract {
 
     @Override
     public String getPersistenceString() {
-        return null;
+        return null; // or implement the logic to return a string representation
     }
 }
