@@ -3,10 +3,16 @@ package org.example;
 public class LeaseContract extends Contract {
     private Vehicle vehicleSold;
 
+
     public LeaseContract(String date, String customerName, String customerEmail, Vehicle vehicleSold) {
         super(date, customerName, customerEmail, vehicleSold);
         this.vehicleSold = vehicleSold;
     }
+
+    public double expectedEndingValue() {
+        return getexpectedEndingValue();
+    }
+
     public Vehicle getVehicleSold() {
         return vehicleSold;
     }
@@ -19,28 +25,15 @@ public class LeaseContract extends Contract {
 
     @Override
     public double getMonthlyPayment() {
-        double vehiclePrice = vehicleSold.getPrice();
-        double p = vehiclePrice;
-        double r;
-        double n;
-        double t;
-
-        if (vehiclePrice >= 10000) {
-            r = 0.0425;
-            t = 4;
-            n = 12;
-        } else {
-            r = 0.0525;
-            t = 2;
-            n = 12;
-        }
-
-        double rOverN = r / n;
-        double numerator = p * rOverN;
-        double onePlusROverN = 1 + rOverN;
-        double denominator = Math.pow(onePlusROverN, -t * n);
-        return numerator / (1 - denominator);
+        double vehiclePrice = getVehicleSold().getPrice();
+        double interestRate = 0.04; // 4.0%
+        int loanTerm = 36;
+        double monthlyInterestRate = interestRate / 12;
+        double loanAmount = vehiclePrice - expectedEndingValue();
+        double monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -loanTerm));
+        return monthlyPayment;
     }
+
 
 
 
@@ -77,11 +70,12 @@ public class LeaseContract extends Contract {
         builder.append(getVehicleSold().getColor()).append("|");
         builder.append(getVehicleSold().getOdometer()).append("|");
         builder.append(getVehicleSold().getPrice()).append("|");
-        builder.append(getexpectedEndingValue()).append("|");
+        builder.append(expectedEndingValue()).append("|");
         builder.append(getLeaseFee()).append("|");
         builder.append(getTotalPrice()).append("|");
         builder.append(getMonthlyPayment()).append("|");
 
         return builder.toString();
     }
+
 }

@@ -13,6 +13,7 @@ public class UserInterface {
     private DealerShip dealership;
     private Scanner scanner;
     private ContractDataManager contractDataManager;
+    private boolean financed;
 
     private void init() {
         DealerShipFileManager fileManager = new DealerShipFileManager();
@@ -211,7 +212,9 @@ public class UserInterface {
         }
     }
     //Implementation for removing a vehicle
-
+    public void setFinanced(boolean financed) {
+        this.financed = financed;
+    }
     public void buyOrLeaseAVehicle() {
         LocalDate date = LocalDate.now();
         Scanner scanner = new Scanner(System.in);
@@ -232,10 +235,11 @@ public class UserInterface {
                 System.out.println("Do you want to finance the car? (y/n)");
                 String financeOrNot = scanner.nextLine().toLowerCase();
                 boolean finance = financeOrNot.equals("y");
-
-                SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicle
-                );
+                SalesContract salesContract = new SalesContract(date, customerName, customerEmail, vehicle);
+                salesContract.setFinanced(finance); // Set the financed variable based on user input
                 double monthlyPayment = salesContract.getMonthlyPayment();
+
+
                 if (finance) {
                     System.out.println("Your monthly payment is " + monthlyPayment);
                 }

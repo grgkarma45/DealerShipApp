@@ -7,10 +7,10 @@ public class SalesContract extends Contract {
     private double processingFee;
     private double recordingFee;
     private boolean financed;
-
-    public double getSalesTax() {
-        return salesTax;
+    public void setFinanced(boolean financed) {
+        this.financed = financed;
     }
+
 
     public double getProcessingFee() {
         return processingFee;
@@ -98,7 +98,7 @@ public class SalesContract extends Contract {
         builder.append(getProcessingFee()).append("|");
         builder.append(getTotalPrice()).append("|");
         builder.append(isFinanced() ? "YES" : "NO").append("|");
-        builder.append(getMonthlyPayment()).append("|");
+        builder.append(getMonthlyPayment()).append("|").append(System.lineSeparator());
 
         return builder.toString();
     }
